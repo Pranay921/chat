@@ -1,6 +1,6 @@
 {
     "require": {
-        "php": "^7.4",
+        "php": "^8.0",
         "cboden/ratchet": "^0.4.4"
     }
 }
