@@ -4,7 +4,8 @@ let ws;
 
 // Initialize WebSocket connection
 function initWebSocket() {
-    ws = new WebSocket('wss://' + window.location.hostname + ':8080');
+    const wsProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+    ws = new WebSocket(`${wsProtocol}//${window.location.hostname}`);
     
     ws.onopen = function() {
         console.log('Connected to WebSocket server');

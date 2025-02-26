@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: trae-chat
+    env: php
+    buildCommand: composer install
+    startCommand: vendor/bin/heroku-php-apache2
+    envVars:
+      - key: DB_HOST
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASS
+        sync: false
+      - key: DB_NAME
+        sync: false
+
+  - type: worker
+    name: trae-websocket
+    env: php
+    buildCommand: composer install
+    startCommand: php server.php
