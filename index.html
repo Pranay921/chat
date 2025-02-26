@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="group-actions">
+                <button onclick="showCreateGroupModal()">Create Group</button>
+                <button onclick="showJoinGroupModal()">Join Group</button>
+            </div>
+            <div id="group-list">
+                <!-- Groups will be listed here -->
+            </div>
+        </div>
+        <div id="chat-container">
+            <div id="current-group"></div>
+            <div id="messages"></div>
+            <div class="input-container">
+                <input type="text" id="message-input" placeholder="Type your message...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+            <!-- Remove the typing indicator div -->
+        </div>
+    </div>
+
+    <!-- Create Group Modal -->
+    <div id="create-group-modal" class="modal">
+        <div class="modal-content">
+            <h2>Create New Group</h2>
+            <input type="text" id="group-name" placeholder="Group Name">
+            <button onclick="createGroup()">Create</button>
+            <button onclick="closeModal('create-group-modal')">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Join Group Modal -->
+    <div id="join-group-modal" class="modal">
+        <div class="modal-content">
+            <h2>Join Group</h2>
+            <input type="text" id="group-pin" placeholder="Enter Group PIN">
+            <button onclick="joinGroup()">Join</button>
+            <button onclick="closeModal('join-group-modal')">Cancel</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
