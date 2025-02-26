@@ -2,5 +2,12 @@
     "require": {
         "php": "^8.0",
         "cboden/ratchet": "^0.4.4"
+    },
+    "scripts": {
+        "start": "vendor/bin/heroku-php-apache2",
+        "post-install-cmd": [
+            "chmod -R 777 storage",
+            "php artisan storage:link"
+        ]
     }
 }
